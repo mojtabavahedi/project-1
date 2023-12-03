@@ -62,7 +62,7 @@ let filterGenerateAllProduct=()=>{
         let{id,image,name,price}=x;
         return `
         <div class="pro">
-                    <img id="select" src=${image} alt="">
+                    <img onclick="window.location.href='sproduct.html'" id="select" src=${image} alt="">
                     <div class="des">
                         <span>adidas</span>
                         <h5>${name}</h5>
@@ -127,17 +127,19 @@ let decrement =(id)=>{
     }
     
     
-    
+ 
     update(selectitem.id);
     basket=basket.filter((x)=>x.item!==0)
     localStorage.setItem("data",JSON.stringify(basket))
     
 }
+// show the number of product between + & =:
 let update = (id)=>{
     let search=basket.find((x)=>x.id===id)
     document.getElementById(id).innerHTML=search.item;
     calculation();
 }
+// show the number of total  products in basket :
 let calculation=()=>{
     let cartIcon=document.querySelector(".num-pro")
     let cartIcon1=document.querySelector("#num-pro")
@@ -147,8 +149,9 @@ let calculation=()=>{
 window.document.addEventListener("DOMContentLoaded",()=>{
     calculation()
 })
+// feature for add to cart and display the product in sproduct page :
 window.document.addEventListener("click",(e)=>{
-   
+   // hidden & visibility basket icon & + &- :
     if(   e.target.id=="basket1" ){
         e.target.parentNode.previousElementSibling.style.display="flex"
         e.target.parentNode.classList="active"
@@ -157,6 +160,7 @@ window.document.addEventListener("click",(e)=>{
         e.target.parentNode.style.display="none"
         e.target.parentNode.nextElementSibling.classList.remove("active")}
     }
+    // select the poduct for display in sproduct page :
      else if(e.target.id=="select"){
         sproduct.push({
             image:e.target.src,

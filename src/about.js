@@ -1,4 +1,4 @@
-// show the number of product in basket :
+// show the number of total  products in basket :
 let basket =JSON.parse(localStorage.getItem("data"))||[];
 let calculation=()=>{
     let cartIcon=document.querySelector(".num-pro")

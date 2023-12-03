@@ -11,7 +11,7 @@ let generateProduct1=()=>{
         let{id,image,name,price}=x;
         return `
         <div class="pro">
-                    <img src=${image} alt="">
+                    <img id="select" onclick="window.location.href='sproduct.html'" src=${image} alt="">
                     <div class="des">
                         <span>adidas</span>
                         <h5>${name}</h5>
@@ -42,7 +42,7 @@ let generateProduct2=()=>{
         let{id,image,name,price}=x;
         return `
         <div class="pro">
-                    <img src=${image} alt="">
+                    <img id="select" onclick="window.location.href='sproduct.html'" src=${image} alt="">
                     <div class="des">
                         <span>adidas</span>
                         <h5>${name}</h5>
@@ -94,7 +94,7 @@ let filterGenerateProduct1=()=>{
         let{id,image,name,price}=x;
         return `
         <div class="pro">
-                    <img src=${image} alt="">
+                    <img id="select" onclick="window.location.href='sproduct.html'" src=${image} alt="">
                     <div class="des">
                         <span>adidas</span>
                         <h5>${name}</h5>
@@ -129,7 +129,7 @@ let filterGenerateProduct2=()=>{
         let{id,image,name,price}=x;
         return `
         <div class="pro">
-                    <img src=${image} alt="">
+                    <img id="select" onclick="window.location.href='sproduct.html'" src=${image} alt="">
                     <div class="des">
                         <span>adidas</span>
                         <h5>${name}</h5>
@@ -198,20 +198,21 @@ let decrement =(id)=>{
         
         
     }
-    
+
     update(selectitem.id);
     basket=basket.filter((x)=>x.item!==0)
     localStorage.setItem("data",JSON.stringify(basket))
     
     
 }
-  
+  // show the number of product between + & -:  
 let update = (id)=>{
     let search=basket.find((x)=>x.id===id)
   let Show=   document.getElementById(id).innerHTML=search.item;
     calculation();
     return Show
 }
+// show the number of total  products in basket :
 let calculation=()=>{
     let cartIcon=document.querySelector(".num-pro")
     let cartIcon1=document.querySelector("#num-pro")
@@ -224,23 +225,27 @@ window.document.addEventListener("DOMContentLoaded",()=>{
 
 
 
-window.document.addEventListener("click",(e)=>{
+
+    window.document.addEventListener("click",(e)=>{
    
-    if(   e.target.id=="basket1" ){
-        e.target.parentNode.previousElementSibling.style.display="flex"
-        e.target.parentNode.classList="active"
-        
-      
+        if(   e.target.id=="basket1" ){
+            e.target.parentNode.previousElementSibling.style.display="flex"
+            e.target.parentNode.classList="active"
+        }else if(e.target.parentNode.id=="count"){
+            if(e.target.nextElementSibling.innerHTML==0){
+            e.target.parentNode.style.display="none"
+            e.target.parentNode.nextElementSibling.classList.remove("active")}
+        }
+         else if(e.target.id=="select"){
+            sproduct.push({
+                image:e.target.src,
+                id:e.target.parentNode.children[2].children[1].id
+                
+                
+            })
+            localStorage.setItem("data-2",JSON.stringify(sproduct))
+           
     
-        
-    } 
-})
-window.document.addEventListener("click",(e)=>{
-    if(e.target.parentNode.id=="count"){
-        if(e.target.nextElementSibling.innerHTML==0){
-        e.target.parentNode.style.display="none"
-        e.target.parentNode.nextElementSibling.classList.remove("active")}
-        
-       
-    }
-    })
+         }
+     })
+    sproduct=[]

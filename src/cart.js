@@ -1,6 +1,6 @@
 let basket =JSON.parse(localStorage.getItem("data"))||[];
 let cartItems = document.querySelector("#bodyy")
-
+// display items in basket :
 let generateCartItems=()=>{
     if(basket.length!==0){
     return ( cartItems.innerHTML=basket.map((x)=>{
@@ -66,11 +66,13 @@ let decrement =(id)=>{
     totalAmount()
     removeCondition()
 }
+//  show the number of product between + & =
 let update = (id)=>{
     let search=basket.find((x)=>x.id===id)
     document.getElementById(id).innerHTML=search.item;
     calculation();
 }
+// show the total price for all products :
 let totalAmount = ()=>{
  let amount =  basket.map((x)=>{
         let {item,id}=x;
@@ -80,6 +82,7 @@ let totalAmount = ()=>{
     document.querySelector("#Totalprice").innerHTML=amount
     document.querySelector("#Totalprice-2").innerHTML=amount
 }
+//show the number of total  products in basket:
 let calculation=()=>{
     let cartIcon=document.querySelector(".num-pro")
     let cartIcon1=document.querySelector("#num-pro")
@@ -89,6 +92,7 @@ let calculation=()=>{
 window.document.addEventListener("DOMContentLoaded",()=>{
     calculation()
 })
+// remove one product when we click on remove icon :
 function remove(id){
     let selectitem=id;
     basket = basket.filter((x)=>x.id!==selectitem.id)
@@ -98,6 +102,7 @@ function remove(id){
     calculation();
     removeCondition();
 }
+// remove all of products when we click on button icon :
 const removeall = document.querySelector("#removeall")
 removeall.addEventListener("click",(e)=>{
     basket=[]
@@ -108,6 +113,7 @@ removeall.addEventListener("click",(e)=>{
     calculation();
     
 })
+// condition for remove product:
 function removeCondition (){
     if(basket.length==0){
         removeall.remove()

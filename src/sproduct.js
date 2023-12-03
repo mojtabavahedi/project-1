@@ -1,4 +1,4 @@
-//select image &  show the number of product in basket :
+//select product &  add to cart :
 let basket =JSON.parse(localStorage.getItem("data"))||[];
 let sproduct = JSON.parse(localStorage.getItem("data-2"))||[];
 let showProduct = document.getElementById("prodetails")
@@ -48,7 +48,9 @@ let generatSproduct=()=>{ return( showProduct.innerHTML=sproduct.map((x)=>{
 
 )}
 
+
 generatSproduct();
+
 
 // add to cart :
 let addToCart = (id)=>{
@@ -71,7 +73,7 @@ let addToCart = (id)=>{
     calculation();
     
 }
-
+//  show the number of total  products in basket:
 let calculation=()=>{
     let cartIcon=document.querySelector(".num-pro")
     let cartIcon1=document.querySelector("#num-pro")
@@ -81,7 +83,7 @@ let calculation=()=>{
 window.document.addEventListener("DOMContentLoaded",()=>{
     calculation()
 })
-// select image :
+// select product :
 document.addEventListener("click",(e)=>{
     if(e.target.id=="s-1"){
         sproduct.splice(0, sproduct.length)
@@ -101,5 +103,25 @@ document.addEventListener("click",(e)=>{
         generatSproduct()
     }
 
+})
+
+document.addEventListener("click",(e)=>{
+    if(e.target.id=="select-1"){
+        sproduct.splice(0, sproduct.length)
+        sproduct.push(allproduct[8])
+        generatSproduct()
+    }else if(e.target.id=="select-2"){
+        sproduct.splice(0, sproduct.length)
+        sproduct.push(allproduct[9])
+        generatSproduct()
+    }else if(e.target.id=="select-3"){
+        sproduct.splice(0, sproduct.length)
+        sproduct.push(allproduct[10])
+        generatSproduct()
+    }else if(e.target.id=="select-4"){
+        sproduct.splice(0, sproduct.length)
+        sproduct.push(allproduct[11])
+        generatSproduct()
+    }
 })
 
