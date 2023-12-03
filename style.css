@@ -793,7 +793,7 @@ margin: 15px 0 20px 0;
   width: 100px;
   text-align: center;
 }
-#remove{
+.remove{
   color: black;
 }
 #cart-1 table td:nth-child(2){
