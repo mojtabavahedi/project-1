@@ -64,6 +64,7 @@ let decrement =(id)=>{
     localStorage.setItem("data",JSON.stringify(basket))
     generateCartItems();
     totalAmount()
+    removeCondition()
 }
 let update = (id)=>{
     let search=basket.find((x)=>x.id===id)
