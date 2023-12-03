@@ -2,20 +2,24 @@ let basket =JSON.parse(localStorage.getItem("data"))||[];
 let cartItems = document.querySelector("#bodyy")
 
 let generateCartItems=()=>{
+    if(basket.length!==0){
     return ( cartItems.innerHTML=basket.map((x)=>{
         let {item,id}=x;
         let search = allproduct.find((x)=>x.id===id) || [];
         return `
         <tr>
-            <td><a  href="#"><i  class="fa-regular fa-circle-xmark"></i></a></td>
+            <td><a onclick="remove(${id})" class="remove"  href="#"><i  class="fa-regular fa-circle-xmark"></i></a></td>
             <td><img src=${search.image} alt=""></td>
             <td>Cartoon Astronaut T-shirts</td>
             <td>$${search.price}</td>
             <td  class="cart-count"> <i  onclick="decrement(${id})" class="fa-solid fa-minus"></i><div id=${id}  >${item} </div><i onclick="increment(${id})" class="fa-solid fa-plus"></i></td>
             <td>${search.price * item}</td>
         </tr>
+        
     `
-    }))
+    }))}else{
+       cartItems.innerHTML= `<div class=empty >please select your product</div>`
+    }
 }
 generateCartItems()
 
@@ -58,7 +62,8 @@ let decrement =(id)=>{
     update(selectitem.id);
     basket=basket.filter((x)=>x.item!==0)
     localStorage.setItem("data",JSON.stringify(basket))
-    
+    generateCartItems();
+    totalAmount()
 }
 let update = (id)=>{
     let search=basket.find((x)=>x.id===id)
@@ -83,4 +88,33 @@ let calculation=()=>{
 window.document.addEventListener("DOMContentLoaded",()=>{
     calculation()
 })
+function remove(id){
+    let selectitem=id;
+    basket = basket.filter((x)=>x.id!==selectitem.id)
+    localStorage.setItem("data",JSON.stringify(basket))
+    generateCartItems();
+    totalAmount();
+    calculation();
+    removeCondition();
+}
+const removeall = document.querySelector("#removeall")
+removeall.addEventListener("click",(e)=>{
+    basket=[]
+    localStorage.setItem("data",JSON.stringify(basket))
+    e.target.remove()
+    generateCartItems();
+    totalAmount();
+    calculation();
+    
+})
+function removeCondition (){
+    if(basket.length==0){
+        removeall.remove()
+     }
+}
+removeCondition()
+
+
+
 totalAmount()
+
