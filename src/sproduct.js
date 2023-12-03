@@ -3,7 +3,7 @@ let basket =JSON.parse(localStorage.getItem("data"))||[];
 let sproduct = JSON.parse(localStorage.getItem("data-2"))||[];
 let showProduct = document.getElementById("prodetails")
 let generatSproduct=()=>{ return( showProduct.innerHTML=sproduct.map((x)=>{
-    let {id,image}=x;
+    let {id,image,price}=x;
 
     
     return `
@@ -27,7 +27,7 @@ let generatSproduct=()=>{ return( showProduct.innerHTML=sproduct.map((x)=>{
 <div class="single-pro-details">
     <h6>Home / T-shirt</h6>
     <h4>Mens Fashion T shirt</h4>
-    <h2>$139.00</h2>
+    <h2>${price}</h2>
     <select>
         <option>select size</option>
         <option> XL </option>
@@ -87,19 +87,19 @@ window.document.addEventListener("DOMContentLoaded",()=>{
 document.addEventListener("click",(e)=>{
     if(e.target.id=="s-1"){
         sproduct.splice(0, sproduct.length)
-        sproduct.push(allproduct[0])
+        sproduct.push(product3[0])
         generatSproduct()
     }else if(e.target.id=="s-2"){
         sproduct.splice(0, sproduct.length)
-        sproduct.push(allproduct[1])
+        sproduct.push(product3[1])
         generatSproduct()
     }else if(e.target.id=="s-3"){
         sproduct.splice(0, sproduct.length)
-        sproduct.push(allproduct[2])
+        sproduct.push(product3[2])
         generatSproduct()
     }else if(e.target.id=="s-4"){
         sproduct.splice(0, sproduct.length)
-        sproduct.push(allproduct[3])
+        sproduct.push(product3[3])
         generatSproduct()
     }
 
@@ -108,19 +108,19 @@ document.addEventListener("click",(e)=>{
 document.addEventListener("click",(e)=>{
     if(e.target.id=="select-1"){
         sproduct.splice(0, sproduct.length)
-        sproduct.push(allproduct[8])
+        sproduct.push(product3[4])
         generatSproduct()
     }else if(e.target.id=="select-2"){
         sproduct.splice(0, sproduct.length)
-        sproduct.push(allproduct[9])
+        sproduct.push(product3[5])
         generatSproduct()
     }else if(e.target.id=="select-3"){
         sproduct.splice(0, sproduct.length)
-        sproduct.push(allproduct[10])
+        sproduct.push(product3[6])
         generatSproduct()
     }else if(e.target.id=="select-4"){
         sproduct.splice(0, sproduct.length)
-        sproduct.push(allproduct[11])
+        sproduct.push(product3[7])
         generatSproduct()
     }
 })

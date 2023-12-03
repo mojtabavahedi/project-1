@@ -21,7 +21,7 @@ let generatAllproduct=()=>{
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <h4>${price}</h4>
+                        <h4>$${price}</h4>
                     </div>
                     <div id="count">
                     <i  onclick="decrement(${id})" class="fa-solid fa-minus"></i>
@@ -73,7 +73,7 @@ let filterGenerateAllProduct=()=>{
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <h4>${price}</h4>
+                        <h4>$${price}</h4>
                     </div>
                     <div id="count">
                     <i  onclick="decrement(${id})" class="fa-solid fa-minus"></i>
@@ -164,7 +164,8 @@ window.document.addEventListener("click",(e)=>{
      else if(e.target.id=="select"){
         sproduct.push({
             image:e.target.src,
-            id:e.target.parentNode.children[2].children[1].id
+            id:e.target.parentNode.children[2].children[1].id,
+            price:e.target.nextElementSibling.children[3].innerHTML
             
             
         })

@@ -13,7 +13,7 @@ let generateCartItems=()=>{
             <td>Cartoon Astronaut T-shirts</td>
             <td>$${search.price}</td>
             <td  class="cart-count"> <i  onclick="decrement(${id})" class="fa-solid fa-minus"></i><div id=${id}  >${item} </div><i onclick="increment(${id})" class="fa-solid fa-plus"></i></td>
-            <td>${search.price * item}</td>
+            <td>$${search.price * item}</td>
         </tr>
         
     `
@@ -79,8 +79,8 @@ let totalAmount = ()=>{
         let search = allproduct.find((x)=>x.id===id)
         return search.price * item
     }).reduce((x,y)=>x+y,0)
-    document.querySelector("#Totalprice").innerHTML=amount
-    document.querySelector("#Totalprice-2").innerHTML=amount
+    document.querySelector("#Totalprice").innerHTML= "$"+amount
+    document.querySelector("#Totalprice-2").innerHTML="$"+amount
 }
 //show the number of total  products in basket:
 let calculation=()=>{

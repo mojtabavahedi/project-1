@@ -22,7 +22,7 @@ let generateProduct1=()=>{
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <h4>${price}</h4>
+                        <h4>$${price}</h4>
                     </div>
                     <div  id="count" >
                     <i onclick="decrement(${id})" class="fa-solid fa-minus"></i>
@@ -53,7 +53,7 @@ let generateProduct2=()=>{
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <h4>${price}</h4>
+                        <h4>$${price}</h4>
                     </div>
                     <div id="count">
                     <i onclick="decrement(${id})" class="fa-solid fa-minus"></i>
@@ -105,7 +105,7 @@ let filterGenerateProduct1=()=>{
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <h4>${price}</h4>
+                        <h4>$${price}</h4>
                     </div>
                     <div id="count">
                     <i onclick="decrement(${id})" class="fa-solid fa-minus"></i>
@@ -140,7 +140,7 @@ let filterGenerateProduct2=()=>{
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <h4>${price}</h4>
+                        <h4>$${price}</h4>
                     </div>
                     <div id="count">
                     <i  onclick="decrement(${id})" class="fa-solid fa-minus"></i>
