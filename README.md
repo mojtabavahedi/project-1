@@ -15,11 +15,17 @@ Our website is designed to adapt to various screen sizes, ensuring a smooth and 
 Navigate effortlessly through our site with the convenient hamburger menu, providing easy access to different sections and enhancing overall user navigation.
 
 3. Pages for Every Need:
+
   Home: Start your journey on our homepage, featuring a curated selection of the latest products and special offers.
+
   Shopping: Explore our extensive product catalog, conveniently organized for a delightful shopping experience.
+
   Blog: Stay informed and entertained with our blog, where we share the latest trends, product reviews, and industry insights.
+
   About Us: Learn more about our story, mission, and the team behind [Your Website Name].
+
   Contact Us: Have questions or feedback? Reach out to us through our contact page.
+
   Cart (Shopping Cart): Easily manage your selected items, review your choices, and proceed to checkout seamlessly.
 
 4. Product Catalog:
