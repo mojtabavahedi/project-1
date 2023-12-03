@@ -1,9 +1,9 @@
-# project-1
+# project-1 
 shopping website
 Explore a seamless online shopping experience with our user-friendly website built using HTML, CSS, and JavaScript.
 We've crafted a modern and intuitive design to enhance your browsing and purchasing journey.
 
-
+Live demo : https://mojtabavahedi.github.io/project-1/ 
 Key Features:
 1. Responsive Design:
 Our website is designed to adapt to various screen sizes, ensuring a smooth and enjoyable experience on both desktop and mobile devices.
