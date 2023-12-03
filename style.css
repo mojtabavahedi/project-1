@@ -886,63 +886,6 @@ margin: 15px 0 20px 0;
 
 
 
-@media(max-width:477px){
-.section-p1 {
-    padding: 20px ;
-  }
-.header {
-  padding: 10px 30px ;
-}
-h1 {
-    font-size: 38px;
-    
-}
-h2 {
-    font-size: 32px;
-
-    
-}
-#searchbar{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 70%;
-  padding-top: 5px;
-  padding-left: 20px;
- }
- #searchbar input{
-  font-size:10px ;
- }
-#banner{
-  height: 40vh;
-}
-#banner h2{
-  color: #fff;
-  font-size: 20px;
-  padding: 10px 0;
-}
-#newsletter{
-  height: 25vh;
-  
-}
-#newsletter .form {
-  width: 90%;
- }
-/* Sproduct page */
-#prodetails {
-  display: flex;
-  flex-direction: column;
-}    
-#prodetails .single-pro-image {
-  width: 100%;
-  margin-right: 0px;
-}
-#prodetails .single-pro-details {
-  width: 100%;
-  
-}
-}
-
 
 @media(max-width:799px){
   .section-p1 {
@@ -1082,7 +1025,7 @@ text-align: center;}
   .section-p1 {
     padding: 20px ;
   }
-#header {
+.header {
   padding: 10px 30px ;
 }
 h1 {
@@ -1094,10 +1037,45 @@ h2 {
 
     
 }
-  #newsletter .form{
-    display: flex;
-     width: 100%;
-   }
+#searchbar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  padding-top: 5px;
+  padding-left: 20px;
+ }
+ #searchbar input{
+  font-size:10px ;
+ }
+#banner{
+  height: 40vh;
+}
+#banner h2{
+  color: #fff;
+  font-size: 20px;
+  padding: 10px 0;
+}
+#newsletter{
+  height: 25vh;
+  
+}
+#newsletter .form {
+  width: 90%;
+ }
+ /* Sproduct page */
+#prodetails {
+  display: flex;
+  flex-direction: column;
+}    
+#prodetails .single-pro-image {
+  width: 100%;
+  margin-right: 0px;
+}
+#prodetails .single-pro-details {
+  width: 100%;
+  
+}
 /*Blog page */
 #blog{
   padding: 100px 20px 0 20px;
